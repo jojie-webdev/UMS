@@ -8,9 +8,16 @@
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
   <title>AdminLTE 2 | Starter</title>
-   <!-- CSRF Token -->
-  <meta name="csrf-token" content="{{ csrf_token() }}">
+
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="{{asset('css/app.css')}}">
+
+  <!-- Datatables -->
+  <link href="https://datatables.yajrabox.com/css/datatables.bootstrap.css" rel="stylesheet">
+
+  <!-- CSRF Token -->
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+  
 
 
 </head>
@@ -97,7 +104,9 @@
 
     <!-- Main content -->
     <section class="content container-fluid">
+        @yield('style')
         @yield('content')
+        @section('script')
     </section>
     <!-- /.content -->
   </div>
@@ -115,7 +124,19 @@
 </div>
 
 
-<script src="{{asset('js/app.js')}}"></script>
 
+<script src="https://datatables.yajrabox.com/js/jquery.min.js"></script>
+<script src="https://datatables.yajrabox.com/js/bootstrap.min.js"></script>
+<script src="https://datatables.yajrabox.com/js/jquery.dataTables.min.js"></script>
+<script src="https://datatables.yajrabox.com/js/datatables.bootstrap.js"></script>
+<script type="text/javascript">
+    $(function() {
+        $('#users-table').DataTable({
+          "pagingType": "simple"
+        });
+    });
+</script>
+
+<script src="{{asset('js/app.js')}}"></script>
 </body>
 </html>

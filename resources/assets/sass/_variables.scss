@@ -6,3 +6,21 @@ $body-bg: #f5f8fa;
 $font-family-sans-serif: "Raleway", sans-serif;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
+
+//admin lte
+nav.navbar.navbar-static-top {
+    height: 50px!important;
+}
+
+//datatable
+div.dataTables_paginate {
+	float: right;
+	margin-top: -20px!important;
+}
+a#users-table_previous {
+    padding-right: 10px!important;
+}
+div#users-table_paginate a {
+    color: gray!important;
+    font-weight: bold!important;
+}
