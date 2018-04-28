@@ -23,29 +23,31 @@
 				</div>
 				<h3>Personal info</h3>
 
-				<form class="form-horizontal" role="form" action="{{url('users', [$user->id])}}">
+				<form action="{{url('users', [$user->id])}}" method="POST">
+				<input type="hidden" name="_method" value="PUT">
+				{{ csrf_field() }}
 					<div class="form-group">
 						<label class="col-lg-3 control-label">NAME:</label>
 						<div class="col-lg-8">
-							<input class="form-control" type="text" value="{{$user->name}}">
+							<input class="form-control" name="name" type="text" value="{{$user->name}}">
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="col-lg-3 control-label">Email:</label>
 						<div class="col-lg-8">
-							<input class="form-control" type="text" value="{{$user->email}}" disabled>
+							<input class="form-control" name="email" type="text" value="{{$user->email}}" >
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="col-md-3 control-label">Password:</label>
 						<div class="col-md-8">
-							<input class="form-control" type="password" value="{{$user->password}}">
+							<input class="form-control" type="password" name="password" value="{{$user->password}}">
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="col-md-3 control-label">Confirm password:</label>
 						<div class="col-md-8">
-							<input class="form-control" type="password" value="{{$user->password}}">
+							<input class="form-control" type="password" name="password_confirmation" value="{{$user->password}}">
 						</div>
 					</div>
 					@if ($errors->any())

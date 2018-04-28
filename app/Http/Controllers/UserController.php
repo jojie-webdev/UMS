@@ -75,16 +75,17 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $user = Auth::user();
-        // $data = $request->validate([
-        //     'name' => 'required',
-        //     'email' => 'required|email|unique:users',
-        // ]);
+        $data = $request->validate([
+        'name' => 'required',
+        'password' => 'nullable',
+        ]);
 
-        dd($user);
-        $user->name = $request->name;
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
+        $user->password = bcrypt($request->input('password'));
+
         $user->save();
-        $request->session()->flash('message', 'Successfully modified the task!');
-        return redirect('users.profile');
+        return back()->withInput();
     }
 
     /**

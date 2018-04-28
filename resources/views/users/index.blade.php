@@ -1,6 +1,15 @@
 @extends('layouts.master')
 
 @section('content')
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 <div class="container">
     <h2>Users</h2>         
     <table id="users-table" class="table table-striped">

@@ -79,7 +79,7 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">HEADER</li>
         <!-- <li class="active"><a href="{{url('category')}}"><i class="fa fa-microchip"></i> <span>Category</span></a></li> -->
-        <li class="active"><a href="{{ URL::to('users/{user}/edit') }}"><i class="fa fa-user"></i> <span>Profile</span></a></li>
+        <li class="active"><a href="{{ url('users/{user}/edit') }}"><i class="fa fa-user"></i> <span>Profile</span></a></li>
 
         <li class="">
            <a href="{{ route('logout') }}"
