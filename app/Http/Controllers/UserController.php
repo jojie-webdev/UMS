@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use \App\User;
 
 class UserController extends Controller
@@ -16,7 +17,7 @@ class UserController extends Controller
     {
         //Display All User from database
         $users = User::all();
-        return view('user.index', ['users' => $users]);
+        return view('users.index', ['users' => $users]);
     }
 
     /**
@@ -59,7 +60,9 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = Auth::user();
+        // dd($user);
+        return view('users.profile', compact('user'));
     }
 
     /**
@@ -71,7 +74,17 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = Auth::user();
+        // $data = $request->validate([
+        //     'name' => 'required',
+        //     'email' => 'required|email|unique:users',
+        // ]);
+
+        dd($user);
+        $user->name = $request->name;
+        $user->save();
+        $request->session()->flash('message', 'Successfully modified the task!');
+        return redirect('users.profile');
     }
 
     /**

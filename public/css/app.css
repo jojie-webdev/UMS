@@ -9072,6 +9072,11 @@ div#users-table_paginate a {
   font-weight: bold !important;
 }
 
+.skin-blue .main-header .navbar .sidebar-toggle:hover {
+  background-color: #3c8dbc !important;
+  height: 50px !important;
+}
+
 /*!
  * Bootstrap v4.1.0 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors

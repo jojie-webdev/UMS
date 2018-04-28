@@ -29,11 +29,11 @@
   <header class="main-header">
 
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a href="{{ URL::to('users') }}" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>A</b>LT</span>
+      <span class="logo-mini"><b>D</b>SH</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Admin</b>LTE</span>
+      <span class="logo-lg"><b>Dashboard</b></span>
     </a>
 
     <!-- Header Navbar -->
@@ -79,7 +79,7 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">HEADER</li>
         <!-- <li class="active"><a href="{{url('category')}}"><i class="fa fa-microchip"></i> <span>Category</span></a></li> -->
-        <li class="active"><a href="#"><i class="fa fa-user"></i> <span>Profile</span></a></li>
+        <li class="active"><a href="{{ URL::to('users/{user}/edit') }}"><i class="fa fa-user"></i> <span>Profile</span></a></li>
 
         <li class="">
            <a href="{{ route('logout') }}"

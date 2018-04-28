@@ -19,7 +19,7 @@
                     <td>{{$user->id}}</td>
                     <td>{{$user->name}}</td>
                     <td>{{$user->password}}</td>
-                    <td>ACTIVE</td>
+                    <td style="color: green;"><strong>ACTIVE</strong></td>
                     <td>
                         <button class="btn btn-success" data-catid={{$user->id}} data-toggle="modal" data-target="#delete">Show</button>
                     </td>
