@@ -1,3 +1,11 @@
+
+		// Flassmessage Edit Profile
+
+			setTimeout(function() {
+            	$('#successMessage').fadeOut('fast');
+            }, 2000); // <-- time in milliseconds
+	
+
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};

@@ -16,20 +16,34 @@
 	      
 			<!-- edit form column -->
 			<div class="col-md-9 personal-info">
-				<div class="alert alert-info alert-dismissable">
+				<!-- <div class="alert alert-info alert-dismissable">
 					<a class="panel-close close" data-dismiss="alert">×</a> 
 					<i class="fa fa-coffee"></i>
 					This is an <strong>.alert</strong>. Use this to show important messages to the user.
-				</div>
+				</div> -->
 				<h3>Personal info</h3>
 
+				<!-- Show Message Successfully -->
+				@if(Session::has('message'))
+					<div id="successMessage" class="alert alert-success">
+						<a class="panel-close close" data-dismiss="alert">×</a> 
+						{{Session::get('message')}}
+					</div>
+				@endif
+				<!-- Show Message Error -->
+				@if(Session::has('message-error'))
+					<div id="successMessage" class="alert alert-danger">
+						<a class="panel-close close" data-dismiss="alert">×</a> 
+						{{Session::get('message-error')}}
+					</div>
+				@endif
 				<form action="{{url('users', [$user->id])}}" method="POST">
 				<input type="hidden" name="_method" value="PUT">
 				{{ csrf_field() }}
 					<div class="form-group">
 						<label class="col-lg-3 control-label">NAME:</label>
 						<div class="col-lg-8">
-							<input class="form-control" name="name" type="text" value="{{$user->name}}">
+							<input class="form-control" name="name" type="text" value="{{$user->filename}}">
 						</div>
 					</div>
 					<div class="form-group">
@@ -41,13 +55,13 @@
 					<div class="form-group">
 						<label class="col-md-3 control-label">Password:</label>
 						<div class="col-md-8">
-							<input class="form-control" type="password" name="password" value="{{$user->password}}">
+							<input class="form-control" type="password" name="password">
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="col-md-3 control-label">Confirm password:</label>
+						<label class="col-md-3 control-label">Confirm Password:</label>
 						<div class="col-md-8">
-							<input class="form-control" type="password" name="password_confirmation" value="{{$user->password}}">
+							<input class="form-control" type="password" name="confirm-password">
 						</div>
 					</div>
 					@if ($errors->any())
@@ -62,9 +76,7 @@
 					<div class="form-group">
 						<label class="col-md-3 control-label"></label>
 						<div class="col-md-8">
-							<input type="submit" class="btn btn-primary" value="Save Changes">
-							<span></span>
-							<input type="reset" class="btn btn-default" value="Cancel">
+							<input type="submit" class="btn btn-primary" value="Update">
 						</div>
 					</div>
 				</form>

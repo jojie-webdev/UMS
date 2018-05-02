@@ -78,14 +78,27 @@ class UserController extends Controller
         $data = $request->validate([
         'name' => 'required',
         'password' => 'nullable',
+        'confirm-password' => 'nullable',
         ]);
-
-        $user->name = $request->input('name');
-        $user->email = $request->input('email');
-        $user->password = bcrypt($request->input('password'));
-
-        $user->save();
-        return back()->withInput();
+        
+        //Password Validation
+        if ($request->input('password') !== $request->input('confirm-password')) {
+            return back()->with('message-error', 'Password Confirmation does not matched!!!');
+        }
+        else if (empty($request->input('password') && $request->input('confirm-password'))) {
+            $user->name = $request->input('name');
+            $user->email = $request->input('email');
+            $user->save();
+            return back()->with('message', 'Updated Successfully!');
+        }
+        else {
+            $user->name = $request->input('name');
+            $user->email = $request->input('email');
+            $user->password = bcrypt($request->input('password'));
+            $user->save();
+            return back()->with('message', 'Updated Successfully!!');
+        }
+            
     }
 
     /**
