@@ -80,6 +80,7 @@ class UserController extends Controller
             'name' => 'required',
             'password' => 'nullable',
             'confirm-password' => 'nullable',
+            'filename' => 'image|mimes:jpeg,png,gif|max:2048',
         ]);
 
         //initalize image
@@ -114,7 +115,6 @@ class UserController extends Controller
             $user->name = $request->input('name');
             $user->email = $request->input('email');
             $user->password = bcrypt($request->input('password'));
-            $user->filename = $filename;
             $user->save();
             return back()->with('message', 'Updated Successfully!!');
         }

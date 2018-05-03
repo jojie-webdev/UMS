@@ -9077,6 +9077,18 @@ div#users-table_paginate a {
   height: 50px !important;
 }
 
+.login-box-body {
+  background: #fff;
+  padding: 20px;
+  border-top: 0;
+  color: #666;
+}
+
+img.img-circle.master {
+  border-radius: 50%;
+  height: 50px !important;
+}
+
 /*!
  * Bootstrap v4.1.0 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors

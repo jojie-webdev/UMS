@@ -1,11 +1,3 @@
-
-		// Flassmessage Edit Profile
-
-			setTimeout(function() {
-            	$('#successMessage').fadeOut('fast');
-            }, 2000); // <-- time in milliseconds
-	
-
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -13912,6 +13904,11 @@ Vue.component('example-component', __webpack_require__(41));
 var app = new Vue({
   el: '#app'
 });
+
+// Flassmessage Edit Profile
+setTimeout(function () {
+  __WEBPACK_IMPORTED_MODULE_0_jquery___default()('#successMessage').fadeOut('fast');
+}, 2000); // <-- time in milliseconds
 
 /***/ }),
 /* 13 */
