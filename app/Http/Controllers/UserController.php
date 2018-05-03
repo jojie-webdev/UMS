@@ -86,15 +86,14 @@ class UserController extends Controller
         //initalize image
         $image = " ";
 
+        //If has a filename to be uploaded
         if($request->hasfile('filename')) 
         { 
             $file = $request->file('filename');
             $extension = rand() .'.'.$file->getClientOriginalExtension(); // getting image extension
             $filename =time().'.'.$extension;
             $file->move(public_path("uploads/"), $filename);
-
-            //save new value of image
-            $image = $user->filename = $filename;
+            $user->filename = $filename;
 
         }
         

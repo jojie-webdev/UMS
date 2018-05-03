@@ -1,3 +1,11 @@
+<!-- Show Message Error from Login -->
+@if(Session::has('active'))
+	<div id="loginError" class="alert alert-danger">
+		<a class="panel-close close" data-dismiss="alert">×</a> 
+		{{Session::get('active')}}
+	</div>
+@endif
+
 <!-- Show Message Successfully -->
 @if(Session::has('message'))
 	<div id="successMessage" class="alert alert-success">

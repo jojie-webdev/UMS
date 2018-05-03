@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
-  <title>AdminLTE 2 | Starter</title>
+  <title>User Management System</title>
 
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="{{asset('css/app.css')}}">
@@ -78,14 +78,16 @@
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">HEADER</li>
-        <!-- <li class="active"><a href="{{url('category')}}"><i class="fa fa-microchip"></i> <span>Category</span></a></li> -->
-        <li class="active"><a href="{{ url('users/{user}/edit') }}"><i class="fa fa-user"></i> <span>Profile</span></a></li>
+        @if($user->is_admin)
+          <li class="active"><a href="{{ url('users') }}">&nbsp;<i class="fa fa-user"></i><span>Users</span></a></li>
+        @endif
+        <li class="active"><a href="{{ url('users/{user}/edit') }}"><i class="fa fa-cog fa-fw" aria-hidden="true"></i>&nbsp;<span>Settings</span></a></li>
 
         <li class="">
            <a href="{{ route('logout') }}"
                 onclick="event.preventDefault();
                          document.getElementById('logout-form').submit();">
-             <i class="fa fa-power-off text-red"></i>   <span>Logout</span>
+             &nbsp;<i class="fa fa-power-off text-red"></i><span>Logout</span>
             </a>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 {{ csrf_field() }}

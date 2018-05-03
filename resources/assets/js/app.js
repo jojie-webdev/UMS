@@ -23,7 +23,6 @@ const app = new Vue({
     el: '#app'
 });
 
-
 // Flassmessage Edit Profile
 setTimeout(function() {
 	$('#successMessage').fadeOut('fast');

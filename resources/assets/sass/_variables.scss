@@ -1,3 +1,9 @@
+//User Active Login Error
+div#loginError {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
 
 // Body
 $body-bg: #f5f8fa;
@@ -40,4 +46,9 @@ div#users-table_paginate a {
 img.img-circle.master {
     border-radius: 50%;
     height: 50px!important;
+}
+
+//previous and next 
+div#users-table_paginate {
+    cursor: pointer;
 }

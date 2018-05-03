@@ -9054,6 +9054,12 @@ table.text-center th {
     border-left: 1px solid #d2d6de;
   }
 }
+div#loginError {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
 nav.navbar.navbar-static-top {
   height: 50px !important;
 }
@@ -9087,6 +9093,10 @@ div#users-table_paginate a {
 img.img-circle.master {
   border-radius: 50%;
   height: 50px !important;
+}
+
+div#users-table_paginate {
+  cursor: pointer;
 }
 
 /*!
