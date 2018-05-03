@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use \App\User;
 
 class UserController extends Controller
@@ -76,10 +77,25 @@ class UserController extends Controller
     {
         $user = Auth::user();
         $data = $request->validate([
-        'name' => 'required',
-        'password' => 'nullable',
-        'confirm-password' => 'nullable',
+            'name' => 'required',
+            'password' => 'nullable',
+            'confirm-password' => 'nullable',
         ]);
+
+        //initalize image
+        $image = " ";
+
+        if($request->hasfile('filename')) 
+        { 
+            $file = $request->file('filename');
+            $extension = rand() .'.'.$file->getClientOriginalExtension(); // getting image extension
+            $filename =time().'.'.$extension;
+            $file->move(public_path("uploads/"), $filename);
+
+            //save new value of image
+            $image = $user->filename = $filename;
+
+        }
         
         //Password Validation
         if ($request->input('password') !== $request->input('confirm-password')) {
@@ -89,15 +105,20 @@ class UserController extends Controller
             $user->name = $request->input('name');
             $user->email = $request->input('email');
             $user->save();
+
+            //get path
+            // return back()->with('message', 'Updated Successfully!')->with('path', $image);
             return back()->with('message', 'Updated Successfully!');
         }
         else {
             $user->name = $request->input('name');
             $user->email = $request->input('email');
             $user->password = bcrypt($request->input('password'));
+            $user->filename = $filename;
             $user->save();
             return back()->with('message', 'Updated Successfully!!');
         }
+
             
     }
 
