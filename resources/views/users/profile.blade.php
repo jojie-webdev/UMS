@@ -7,6 +7,8 @@
 		<div class="row">
 			<div class="col-md-12 personal-info">
 				<h3>Personal info</h3>
+				
+				<!-- Update Form Request -->
 				<form action="{{url('users', [$user->id])}}" method="POST" enctype="multipart/form-data">
 				<input type="hidden" name="_method" value="PUT">
 				{{ csrf_field() }}
@@ -37,13 +39,13 @@
 							<div class="form-group">
 								<label class="col-md-3 control-label">Password:</label>
 								<div class="col-md-8">
-									<input class="form-control" type="password" name="password" value="{{$user->email}}">
+									<input class="form-control" type="password" name="password" >
 								</div>
 							</div>
 							<div class="form-group">
 								<label class="col-md-3 control-label">Confirm Password:</label>
 								<div class="col-md-8">
-									<input class="form-control" type="password" name="confirm-password" value="{{$user->email}}">
+									<input class="form-control" type="password" name="confirm-password">
 								</div>
 							</div>
 							<div class="form-group">

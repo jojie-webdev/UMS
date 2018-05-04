@@ -11,7 +11,7 @@
     </div>
 @endif
 <div class="container">
-    <h2>Users</h2>         
+    <h2>Users</h2>  
     <table id="users-table" class="table table-striped">
         <thead>
             <tr>
@@ -19,7 +19,10 @@
                 <th>NAME</th>
                 <th>PASSWORD</th>
                 <th>STATUS</th>
-                <th>SHOW</th>
+                <!-- show action if user is admin -->
+                @if (Auth::user()->isAdmin())
+                    <th>ACTION</th>
+                @endif
             </tr>
         </thead>
         <tbody>
@@ -28,10 +31,35 @@
                     <td>{{$user->id}}</td>
                     <td>{{$user->name}}</td>
                     <td>{{$user->password}}</td>
-                    <td style="color: green;"><strong>ACTIVE</strong></td>
-                    <td>
-                        <button class="btn btn-success" data-catid={{$user->id}} data-toggle="modal" data-target="#delete">Show</button>
-                    </td>
+
+                    <!-- If user is active or not -->
+                    @if ($user->is_active)
+                        <td style="color: green;"><strong>ACTIVE</strong></td>
+                    @else
+                        <td style="color: red;"><strong>INACTIVE</strong></td>
+                    @endif
+
+                    <!-- show action if user is admin -->
+                    @if (Auth::user()->isAdmin())
+                        <td>
+                            <!-- <button class="btn btn-danger" data-catid={{$user->id}} data-toggle="modal" data-target="#delete">Deactivate</button> -->
+                            <form action="{{url('admin', [$user->id])}}" method="POST">
+                                <input type="hidden" name="_method" value="PUT">
+                                {{ csrf_field() }}
+                                @if ($user->is_active)
+                                    @if(Auth::check())
+                                        @if (Auth::id() === $user->id)
+                                            <input type="submit" class="btn btn-danger" value="Deactivate" disabled="">
+                                        @else
+                                            <input type="submit" class="btn btn-danger" value="Deactivate">
+                                        @endif
+                                    @endif
+                                @else
+                                    <input type="submit" class="btn btn-success" value="Activate">
+                                @endif
+                            </form>
+                        </td>
+                    @endif
                 </tr>
             @endforeach
         </tbody>

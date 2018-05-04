@@ -78,9 +78,9 @@
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">HEADER</li>
-        @if($user->is_admin)
-          <li class="active"><a href="{{ url('users') }}">&nbsp;<i class="fa fa-user"></i><span>Users</span></a></li>
-        @endif
+        <li class="active">
+          <a href="{{ url('users') }}">&nbsp;<i class="fa fa-user"></i><span>Users</span></a>
+        </li>
         <li class="active"><a href="{{ url('users/{user}/edit') }}"><i class="fa fa-cog fa-fw" aria-hidden="true"></i>&nbsp;<span>Settings</span></a></li>
 
         <li class="">
