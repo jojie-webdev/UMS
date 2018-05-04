@@ -51,7 +51,7 @@
 							<div class="form-group">
 								<label class="col-md-3 control-label"></label>
 								<div class="col-md-8">
-									<input type="submit" class="btn btn-primary" value="Update">
+									<input type="submit" class="btn btn-success" value="Update">
 								</div>
 							</div>
 						</div> <!-- Col 9 END -->

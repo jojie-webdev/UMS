@@ -9060,8 +9060,39 @@ div#loginError {
   font-weight: bold;
 }
 
+section.content.container-fluid {
+  background: #fff;
+}
+
+body.skin-blue.sidebar-mini {
+  color: #848586;
+}
+
 nav.navbar.navbar-static-top {
   height: 50px !important;
+}
+
+.main-header a.logo {
+  text-decoration: none !important;
+}
+
+.skin-blue .main-header .navbar {
+  background-color: #2ea94a;
+}
+
+.skin-blue .main-header .navbar .sidebar-toggle:hover {
+  background-color: #2ea94a !important;
+  height: 50px !important;
+}
+
+.skin-blue .main-header .logo:hover {
+  background-color: #17802f;
+}
+
+.skin-blue .main-header .logo {
+  background-color: #17802f;
+  color: #ffffff;
+  border-bottom: 0 solid transparent;
 }
 
 div.dataTables_paginate {
@@ -9078,9 +9109,13 @@ div#users-table_paginate a {
   font-weight: bold !important;
 }
 
-.skin-blue .main-header .navbar .sidebar-toggle:hover {
-  background-color: #3c8dbc !important;
-  height: 50px !important;
+table.dataTable {
+  clear: both;
+  margin-top: 6px !important;
+  margin-bottom: 6px !important;
+  max-width: none !important;
+  width: 100% !important;
+  color: #848586;
 }
 
 .login-box-body {
