@@ -33,6 +33,7 @@
             </div>
             <div class="login-box-body">
                 <p class="login-box-msg">Sign in to start your session</p>
+                <!-- LOGIN FORM -->
                 <form method="POST" action="{{ route('login') }}">
                     {{ csrf_field() }}
 
@@ -74,6 +75,8 @@
             </div>
         </div>
     </div>
+
+    <!-- REGISTRATION FORM-->
     <!-- Modal -->
     <div class="modal fade" id="myModal" role="dialog">
         <div class="modal-dialog">
@@ -99,7 +102,77 @@ form-control-feedback"></span>
                                 </span>
                             @endif
                         </div>
-                    </div>
+                    </div><!-- Name -->
+                    <div class="form-group row">
+                        <div class="col-md-12">
+                            <input id="company" type="text" class="form-control{{ $errors->has('company') ? ' is-invalid' : '' }}" name="company" autofocus placeholder="Company Name(Optional)">
+                            <span class="glyphicon glyphicon-user
+form-control-feedback"></span>
+
+                            @if ($errors->has('company'))
+                                <span class="invalid-feedback">
+                                    <strong>{{ $errors->first('company') }}</strong>
+                                </span>
+                            @endif
+                        </div>
+                    </div><!-- Company -->
+
+                    <div class="form-group row">
+                        <div class="col-md-12">
+                            <input id="address" type="text" class="form-control{{ $errors->has('address') ? ' is-invalid' : '' }}" name="address"required autofocus placeholder="Address">
+                            <span class="glyphicon glyphicon-user
+form-control-feedback"></span>
+
+                            @if ($errors->has('address'))
+                                <span class="invalid-feedback">
+                                    <strong>{{ $errors->first('address') }}</strong>
+                                </span>
+                            @endif
+                        </div>
+                    </div><!-- Address -->
+
+                    <div class="form-group row">
+                        <div class="col-md-12">
+                            <input id="age" type="text" class="form-control{{ $errors->has('age') ? ' is-invalid' : '' }}" name="age"required autofocus placeholder="Age">
+                            <span class="glyphicon glyphicon-user
+form-control-feedback"></span>
+
+                            @if ($errors->has('age'))
+                                <span class="invalid-feedback">
+                                    <strong>{{ $errors->first('age') }}</strong>
+                                </span>
+                            @endif
+                        </div>
+                    </div><!-- Age -->
+
+                    <div class="form-group row">
+                        <div class="col-md-12">
+                            <input id="gender" type="text" class="form-control{{ $errors->has('gender') ? ' is-invalid' : '' }}" name="gender"required autofocus placeholder="Gender">
+                            <span class="glyphicon glyphicon-user
+form-control-feedback"></span>
+
+                            @if ($errors->has('gender'))
+                                <span class="invalid-feedback">
+                                    <strong>{{ $errors->first('gender') }}</strong>
+                                </span>
+                            @endif
+                        </div>
+                    </div><!-- Gender -->
+
+                    <div class="form-group row">
+                        <div class="col-md-12">
+                            <input id="about_me" type="text" class="form-control{{ $errors->has('about_me') ? ' is-invalid' : '' }}" name="about_me"required autofocus placeholder="About Me">
+                            <span class="glyphicon glyphicon-user
+form-control-feedback"></span>
+
+                            @if ($errors->has('about_me'))
+                                <span class="invalid-feedback">
+                                    <strong>{{ $errors->first('about_me') }}</strong>
+                                </span>
+                            @endif
+                        </div>
+                    </div><!-- About Me -->
+
                     <div class="form-group row">
                         <div class="col-md-12">
                             <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required placeholder="Email">
@@ -133,7 +206,7 @@ form-control-feedback"></span>
                     <div class="form-group row mb-0">
                         <!-- /.col -->
                         <div class="col-xs-4">
-                            <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+                            <button type="submit" class="btn btn-primary btn-block btn-flat">Register</button>
                         </div>
                     </div>
                 </form>
@@ -141,7 +214,7 @@ form-control-feedback"></span>
           </div>
           
         </div>
-    </div>
+    </div> <!-- END MODAL -->
     <style type="text/css">
         .login-page{
             background: #d2d6de;

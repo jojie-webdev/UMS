@@ -17,7 +17,11 @@
             <tr>
                 <th>ID</th>
                 <th>NAME</th>
-                <th>PASSWORD</th>
+                <th>COMPANY</th>
+                <th>ADDRESS</th>
+                <th>AGE</th>
+                <th>GENDER</th>
+                <th>ABOUT ME</th>
                 <th>STATUS</th>
                 <!-- show action if user is admin -->
                 @if (Auth::user()->isAdmin())
@@ -30,7 +34,11 @@
                 <tr>
                     <td>{{$user->id}}</td>
                     <td>{{$user->name}}</td>
-                    <td>{{$user->password}}</td>
+                    <td>{{$user->company}}</td>
+                    <td>{{$user->address}}</td>
+                    <td>{{$user->age}}</td>
+                    <td>{{$user->gender}}</td>
+                    <td>{{$user->about_me}}</td>
 
                     <!-- If user is active or not -->
                     @if ($user->is_active)

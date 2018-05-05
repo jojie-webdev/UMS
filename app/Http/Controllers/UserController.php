@@ -78,6 +78,11 @@ class UserController extends Controller
         $user = Auth::user();
         $data = $request->validate([
             'name' => 'required',
+            'company' => 'string|max:255',
+            'address' => 'required|string|max:255',
+            'age' => 'nullable',
+            'gender' => 'required|string|max:255',
+            'about_me' => 'string|max:255',
             'password' => 'nullable',
             'confirm-password' => 'nullable',
             'filename' => 'image|mimes:jpeg,png,gif|max:2048',
@@ -103,6 +108,11 @@ class UserController extends Controller
         }
         else if (empty($request->input('password') && $request->input('confirm-password'))) {
             $user->name = $request->input('name');
+            $user->company = $request->input('company');
+            $user->address = $request->input('address');
+            $user->age = $request->input('age');
+            $user->gender = $request->input('gender');
+            $user->about_me = $request->input('about_me');
             $user->email = $request->input('email');
             $user->save();
 
@@ -112,6 +122,11 @@ class UserController extends Controller
         }
         else {
             $user->name = $request->input('name');
+            $user->company = $request->input('company');
+            $user->address = $request->input('address');
+            $user->age = $request->input('age');
+            $user->gender = $request->input('gender');
+            $user->about_me = $request->input('about_me');
             $user->email = $request->input('email');
             $user->password = bcrypt($request->input('password'));
             $user->save();

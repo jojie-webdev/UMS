@@ -24,34 +24,70 @@
 
 						<!-- right column -->
 						<div class="col-md-9">
-							<div class="form-group">
-								<label class="col-lg-3 control-label">NAME:</label>
-								<div class="col-lg-8">
-									<input class="form-control" name="name" type="text" value="{{$user->name}}">
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<label class="col-lg-3 control-label">NAME:</label>
+										<div class="col-lg-12">
+											<input class="form-control" name="name" type="text" value="{{$user->name}}">
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-lg-3 control-label">Company:</label>
+										<div class="col-lg-12">
+											<input class="form-control" name="company" type="text" value="{{$user->company}}">
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-lg-3 control-label">Address:</label>
+										<div class="col-lg-12">
+											<input class="form-control" name="address" type="text" value="{{$user->address}}">
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-lg-3 control-label">Age:</label>
+										<div class="col-lg-12">
+											<input class="form-control" name="age" type="text" value="{{$user->age}}">
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-lg-3 control-label">Gender:</label>
+										<div class="col-lg-12">
+											<input class="form-control" name="gender" type="text" value="{{$user->gender}}">
+										</div>
+									</div>
 								</div>
-							</div>
-							<div class="form-group">
-								<label class="col-lg-3 control-label">Email:</label>
-								<div class="col-lg-8">
-									<input class="form-control" name="email" type="text" value="{{$user->email}}" >
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="col-md-3 control-label">Password:</label>
-								<div class="col-md-8">
-									<input class="form-control" type="password" name="password" >
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="col-md-3 control-label">Confirm Password:</label>
-								<div class="col-md-8">
-									<input class="form-control" type="password" name="confirm-password">
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="col-md-3 control-label"></label>
-								<div class="col-md-8">
-									<input type="submit" class="btn btn-success" value="Update">
+								<div class="col-md-6">
+									<div class="form-group">
+										<label class="col-lg-12 control-label">About Me:</label>
+										<div class="col-lg-12">
+											<textarea class="form-control" name="about_me" type="text" >{{ ucfirst($user->about_me) }}
+											</textarea>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-lg-3 control-label">Email:</label>
+										<div class="col-lg-12">
+											<input class="form-control" name="email" type="text" value="{{$user->email}}" >
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-md-3 control-label">Password:</label>
+										<div class="col-md-12">
+											<input class="form-control" type="password" name="password" >
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-md-3 control-label">Confirm Password:</label>
+										<div class="col-md-12">
+											<input class="form-control" type="password" name="confirm-password">
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-md-8">
+											<input type="submit" class="btn btn-success" value="Update">
+										</div>
+									</div>
 								</div>
 							</div>
 						</div> <!-- Col 9 END -->

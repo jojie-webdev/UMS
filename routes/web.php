@@ -19,6 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+//Only Authenticated user can access this page!
 Route::group(['middleware' => ['auth']], function() {
     Route::resource('users', 'UserController');
 	Route::resource('admin', 'AdminController');

@@ -16,6 +16,11 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->string('company')->default('Facebook Company');
+            $table->string('address')->default('California');
+            $table->integer('age')->default(18);
+            $table->string('gender')->default('Male');
+            $table->string('about_me')->default('I am handsome!');
             $table->string('email')->unique();
             $table->string('password');
             $table->string('filename')->default('avatar5.png');
