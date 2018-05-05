@@ -13905,6 +13905,22 @@ var app = new Vue({
   el: '#app'
 });
 
+//Datatables 
+__WEBPACK_IMPORTED_MODULE_0_jquery___default()(function () {
+  __WEBPACK_IMPORTED_MODULE_0_jquery___default()('#users-table').DataTable({
+    "pagingType": "simple"
+  });
+});
+
+//Confirmation action button
+__WEBPACK_IMPORTED_MODULE_0_jquery___default()('table[data-form="deleteForm"]').on('click', '.form-delete', function (e) {
+  e.preventDefault();
+  var $form = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(this);
+  __WEBPACK_IMPORTED_MODULE_0_jquery___default()('#confirm').modal({ backdrop: 'static', keyboard: false }).on('click', '#delete-btn', function () {
+    $form.submit();
+  });
+});
+
 // Flassmessage Edit Profile
 setTimeout(function () {
   __WEBPACK_IMPORTED_MODULE_0_jquery___default()('#successMessage').fadeOut('fast');

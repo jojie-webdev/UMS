@@ -17,6 +17,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+
+
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -29,7 +32,7 @@
         <div class="login-box">
             @include('layouts.errors')
             <div class="login-logo" >
-                <a href="#"><b>User</b>Management System</a>
+                <a href="#"><b>User</b>&nbsp;Management System</a>
             </div>
             <div class="login-box-body">
                 <p class="login-box-msg">Sign in to start your session</p>
@@ -90,119 +93,123 @@
             <div class="modal-body">
               <form method="POST" action="{{ route('register') }}">
                     {{ csrf_field() }}
-                    <div class="form-group row">
-                        <div class="col-md-12">
-                            <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus placeholder="Name">
-                            <span class="glyphicon glyphicon-user
-form-control-feedback"></span>
 
-                            @if ($errors->has('name'))
-                                <span class="invalid-feedback">
-                                    <strong>{{ $errors->first('name') }}</strong>
-                                </span>
-                            @endif
-                        </div>
-                    </div><!-- Name -->
-                    <div class="form-group row">
-                        <div class="col-md-12">
-                            <input id="company" type="text" class="form-control{{ $errors->has('company') ? ' is-invalid' : '' }}" name="company" autofocus placeholder="Company Name(Optional)">
-                            <span class="glyphicon glyphicon-user
-form-control-feedback"></span>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <div class="col-md-12">
+                                    <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus placeholder="Name">
+                                    <span class="glyphicon glyphicon-user
+        form-control-feedback"></span>
 
-                            @if ($errors->has('company'))
-                                <span class="invalid-feedback">
-                                    <strong>{{ $errors->first('company') }}</strong>
-                                </span>
-                            @endif
-                        </div>
-                    </div><!-- Company -->
+                                    @if ($errors->has('name'))
+                                        <span class="invalid-feedback">
+                                            <strong>{{ $errors->first('name') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                            </div><!-- Name -->
+                            <div class="form-group row">
+                                <div class="col-md-12">
+                                    <input id="company" type="text" class="form-control{{ $errors->has('company') ? ' is-invalid' : '' }}" name="company" autofocus placeholder="Company Name">
+                                    <i class="far fa-building form-control-feedback"></i>
 
-                    <div class="form-group row">
-                        <div class="col-md-12">
-                            <input id="address" type="text" class="form-control{{ $errors->has('address') ? ' is-invalid' : '' }}" name="address"required autofocus placeholder="Address">
-                            <span class="glyphicon glyphicon-user
-form-control-feedback"></span>
+                                    @if ($errors->has('company'))
+                                        <span class="invalid-feedback">
+                                            <strong>{{ $errors->first('company') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                            </div><!-- Company -->
 
-                            @if ($errors->has('address'))
-                                <span class="invalid-feedback">
-                                    <strong>{{ $errors->first('address') }}</strong>
-                                </span>
-                            @endif
-                        </div>
-                    </div><!-- Address -->
+                            <div class="form-group row">
+                                <div class="col-md-12">
+                                    <input id="address" type="text" class="form-control{{ $errors->has('address') ? ' is-invalid' : '' }}" name="address"required autofocus placeholder="Address">
+                                   <i class="fa fa-address-book form-control-feedback"></i>
 
-                    <div class="form-group row">
-                        <div class="col-md-12">
-                            <input id="age" type="text" class="form-control{{ $errors->has('age') ? ' is-invalid' : '' }}" name="age"required autofocus placeholder="Age">
-                            <span class="glyphicon glyphicon-user
-form-control-feedback"></span>
 
-                            @if ($errors->has('age'))
-                                <span class="invalid-feedback">
-                                    <strong>{{ $errors->first('age') }}</strong>
-                                </span>
-                            @endif
-                        </div>
-                    </div><!-- Age -->
+                                    @if ($errors->has('address'))
+                                        <span class="invalid-feedback">
+                                            <strong>{{ $errors->first('address') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                            </div><!-- Address -->
 
-                    <div class="form-group row">
-                        <div class="col-md-12">
-                            <input id="gender" type="text" class="form-control{{ $errors->has('gender') ? ' is-invalid' : '' }}" name="gender"required autofocus placeholder="Gender">
-                            <span class="glyphicon glyphicon-user
-form-control-feedback"></span>
+                            <div class="form-group row">
+                                <div class="col-md-12">
+                                    <input id="age" type="text" class="form-control{{ $errors->has('age') ? ' is-invalid' : '' }}" name="age"required autofocus placeholder="Age">
+                                    <i class="fas fa-birthday-cake form-control-feedback"></i>
 
-                            @if ($errors->has('gender'))
-                                <span class="invalid-feedback">
-                                    <strong>{{ $errors->first('gender') }}</strong>
-                                </span>
-                            @endif
-                        </div>
-                    </div><!-- Gender -->
+                                    @if ($errors->has('age'))
+                                        <span class="invalid-feedback">
+                                            <strong>{{ $errors->first('age') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                            </div><!-- Age -->
 
-                    <div class="form-group row">
-                        <div class="col-md-12">
-                            <input id="about_me" type="text" class="form-control{{ $errors->has('about_me') ? ' is-invalid' : '' }}" name="about_me"required autofocus placeholder="About Me">
-                            <span class="glyphicon glyphicon-user
-form-control-feedback"></span>
+                            <div class="form-group row">
+                                <div class="col-md-12">
+                                    <input id="gender" type="text" class="form-control{{ $errors->has('gender') ? ' is-invalid' : '' }}" name="gender"required autofocus placeholder="Gender">
+                                    <i class="fa fa-intersex custom form-control-feedback"></i>
 
-                            @if ($errors->has('about_me'))
-                                <span class="invalid-feedback">
-                                    <strong>{{ $errors->first('about_me') }}</strong>
-                                </span>
-                            @endif
-                        </div>
-                    </div><!-- About Me -->
+                                    @if ($errors->has('gender'))
+                                        <span class="invalid-feedback">
+                                            <strong>{{ $errors->first('gender') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                            </div><!-- Gender -->
+                        </div><!-- COL MD 6-->
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <div class="col-md-12">
+                                    <textarea id="about_me" type="text" class="form-control{{ $errors->has('about_me') ? ' is-invalid' : '' }}" name="about_me"required autofocus placeholder="About Me"></textarea> 
+                                    <span class="glyphicon glyphicon-user
+        form-control-feedback"></span>
 
-                    <div class="form-group row">
-                        <div class="col-md-12">
-                            <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required placeholder="Email">
-                            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                                    @if ($errors->has('about_me'))
+                                        <span class="invalid-feedback">
+                                            <strong>{{ $errors->first('about_me') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                            </div><!-- About Me -->
 
-                            @if ($errors->has('email'))
-                                <span class="invalid-feedback">
-                                    <strong>{{ $errors->first('email') }}</strong>
-                                </span>
-                            @endif
+                            <div class="form-group row">
+                                <div class="col-md-12">
+                                    <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required placeholder="Email">
+                                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+
+                                    @if ($errors->has('email'))
+                                        <span class="invalid-feedback">
+                                            <strong>{{ $errors->first('email') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-12">
+                                    <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required placeholder="Password">
+                                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+
+                                    @if ($errors->has('password'))
+                                        <span class="invalid-feedback">
+                                            <strong>{{ $errors->first('password') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-12">
+                                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required placeholder="Confirm Password">
+                                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="form-group row">
-                        <div class="col-md-12">
-                            <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required placeholder="Password">
-                            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-
-                            @if ($errors->has('password'))
-                                <span class="invalid-feedback">
-                                    <strong>{{ $errors->first('password') }}</strong>
-                                </span>
-                            @endif
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <div class="col-md-12">
-                            <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required placeholder="Confirm Password">
-                            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-                        </div>
-                    </div>
+                    
                     <div class="form-group row mb-0">
                         <!-- /.col -->
                         <div class="col-xs-4">
@@ -248,11 +255,32 @@ form-control-feedback"></span>
             color: gray;
             margin-right: 20px
         }
+        i.fa.form-control-feedback {
+            font-size: 20px;
+            color: gray;
+            margin-right: 20px
+        }
+        i.fas.form-control-feedback {
+            font-size: 20px;
+            color: gray;
+            margin-right: 20px;
+            margin-top: 6px;
+        }
+        i.far.form-control-feedback {
+            font-size: 20px;
+            color: gray;
+            margin-right: 20px;
+            margin-top: 6px;
+        }
         .col-xs-4 button {
             font-size: 14px;
         }
         a.btn.btn-link {
             margin-left: 85px;
+            font-size: 14px;
+        }
+        textarea#about_me {
+            height: 77px;
             font-size: 14px;
         }
         button.close {

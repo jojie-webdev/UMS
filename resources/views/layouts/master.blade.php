@@ -122,7 +122,7 @@
       Anything you want
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2016 <a href="#">Company</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2016 <a href="#">Self-Profclaimed Company</a>.</strong> All rights reserved.
   </footer>
 </div>
 
@@ -132,14 +132,7 @@
 <script src="https://datatables.yajrabox.com/js/bootstrap.min.js"></script>
 <script src="https://datatables.yajrabox.com/js/jquery.dataTables.min.js"></script>
 <script src="https://datatables.yajrabox.com/js/datatables.bootstrap.js"></script>
-<script type="text/javascript">
-    $(function() {
-        $('#users-table').DataTable({
-          "pagingType": "simple"
-        });
-    });
-</script>
-
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 <script src="{{asset('js/app.js')}}"></script>
 </body>
 </html>

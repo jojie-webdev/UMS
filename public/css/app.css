@@ -9134,6 +9134,11 @@ div#users-table_paginate {
   cursor: pointer;
 }
 
+.modal-header {
+  background: #2ea94a;
+  color: white;
+}
+
 /*!
  * Bootstrap v4.1.0 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors

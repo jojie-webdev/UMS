@@ -12,7 +12,7 @@
 @endif
 <div class="container">
     <h2>Users</h2>  
-    <table id="users-table" class="table table-striped">
+    <table id="users-table" class="table table-striped" data-form="deleteForm">
         <thead>
             <tr>
                 <th>ID</th>
@@ -51,7 +51,7 @@
                     @if (Auth::user()->isAdmin())
                         <td>
                             <!-- <button class="btn btn-danger" data-catid={{$user->id}} data-toggle="modal" data-target="#delete">Deactivate</button> -->
-                            <form action="{{url('admin', [$user->id])}}" method="POST">
+                            <form action="{{url('admin', [$user->id])}}" method="POST" class="form-delete">
                                 <input type="hidden" name="_method" value="PUT">
                                 {{ csrf_field() }}
                                 @if ($user->is_active)
@@ -59,7 +59,7 @@
                                         @if (Auth::id() === $user->id)
                                             <input type="submit" class="btn btn-danger" value="Deactivate" disabled="">
                                         @else
-                                            <input type="submit" class="btn btn-danger" value="Deactivate">
+                                            <input type="submit" class="btn btn-danger delete confirm" value="Deactivate">
                                         @endif
                                     @endif
                                 @else
@@ -73,5 +73,25 @@
         </tbody>
     </table>
 </div>
+
+<!-- Confirmation Modal -->
+<div class="modal" id="confirm">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Confirmation</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-sm btn-primary" id="delete-btn">Submit</button>
+                <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 @endsection
 
