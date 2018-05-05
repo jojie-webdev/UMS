@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use \App\User;
+use DB;
 
 class UserController extends Controller
 {
@@ -18,6 +19,7 @@ class UserController extends Controller
     {
         //Display All User from database
         $users = User::all();
+
         return view('users.index', ['users' => $users]);
     }
 

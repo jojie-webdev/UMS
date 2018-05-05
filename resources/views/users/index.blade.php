@@ -16,6 +16,7 @@
         <thead>
             <tr>
                 <th>ID</th>
+                <th>AVATAR</th>
                 <th>NAME</th>
                 <th>COMPANY</th>
                 <th>ADDRESS</th>
@@ -33,6 +34,9 @@
             @foreach($users as $user)
                 <tr>
                     <td>{{$user->id}}</td>
+                    <td>
+                        <img src="/uploads/{{ $user->filename }}" class="img-circle" alt="User Image" width="50" height="50">
+                    </td>
                     <td>{{$user->name}}</td>
                     <td>{{$user->company}}</td>
                     <td>{{$user->address}}</td>

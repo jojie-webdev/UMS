@@ -9,7 +9,7 @@
 				<h3>Personal info</h3>
 				
 				<!-- Update Form Request -->
-				<form action="{{url('users', [$user->id])}}" method="POST" enctype="multipart/form-data">
+				<form action="{{url('users', [$user->id])}}" method="POST" enctype="multipart/form-data" class="profile-form">
 				<input type="hidden" name="_method" value="PUT">
 				{{ csrf_field() }}
 					<div class="row">
@@ -56,6 +56,11 @@
 											<input class="form-control" name="gender" type="text" value="{{$user->gender}}">
 										</div>
 									</div>
+									<div class="form-group">
+										<div class="col-md-8">
+											<input type="submit" class="btn btn-success" value="Update">
+										</div>
+									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">
@@ -81,11 +86,6 @@
 										<label class="col-md-3 control-label">Confirm Password:</label>
 										<div class="col-md-12">
 											<input class="form-control" type="password" name="confirm-password">
-										</div>
-									</div>
-									<div class="form-group">
-										<div class="col-md-8">
-											<input type="submit" class="btn btn-success" value="Update">
 										</div>
 									</div>
 								</div>

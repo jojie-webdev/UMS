@@ -9139,6 +9139,14 @@ div#users-table_paginate {
   color: white;
 }
 
+.form-control {
+  color: #a48d86 !important;
+}
+
+textarea.form-control {
+  height: 100px;
+}
+
 /*!
  * Bootstrap v4.1.0 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
