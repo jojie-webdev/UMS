@@ -18,7 +18,7 @@
 							<div class="text-center">
 								<img src="/uploads/{{ Auth::user()->filename }}" class="img-circle" alt="User Image" width="100" height="100">
 								<h6>Upload a different photo...</h6>
-								<input class="form-control" type="file" name="filename">
+								<input class="form-control file" type="file" name="filename">
 							</div>
 						</div><!-- Col 3 END -->
 
@@ -29,7 +29,7 @@
 									<div class="form-group">
 										<label class="col-lg-3 control-label">NAME:</label>
 										<div class="col-lg-12">
-											<input class="form-control" name="name" type="text" value="{{$user->name}}">
+											<input class="form-control file" name="name" type="text" value="{{$user->name}}">
 										</div>
 									</div>
 									<div class="form-group">

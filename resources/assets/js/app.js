@@ -43,9 +43,13 @@ $('table[data-form="deleteForm"]').on('click', '.form-delete', function(e){
 
 //Forms submit button is disabled if no action happen.
 $(".profile-form input[type=submit]").attr('disabled','disabled');
-$("form").keyup(function(){
+// $("input[type=submit]").keyup(function(){
+// $("input[type=submit]").removeAttr('disabled');
+// });
+$("input.form-control").click(function(){
 $("input[type=submit]").removeAttr('disabled');
 });
+
 
 // Flassmessage Edit Profile
 setTimeout(function() {

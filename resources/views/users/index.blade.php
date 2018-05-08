@@ -23,6 +23,7 @@
                 <th>AGE</th>
                 <th>GENDER</th>
                 <th>ABOUT ME</th>
+                <th>USER TYPE</th>
                 <th>STATUS</th>
                 <!-- show action if user is admin -->
                 @if (Auth::user()->isAdmin())
@@ -43,6 +44,12 @@
                     <td>{{$user->age}}</td>
                     <td>{{$user->gender}}</td>
                     <td>{{$user->about_me}}</td>
+                    <!-- If user is active or not -->
+                    @if ($user->role_id === 2)
+                        <td><strong>ADMIN</strong></td>
+                    @else
+                        <td><strong>USER</strong></td>
+                    @endif
 
                     <!-- If user is active or not -->
                     @if ($user->is_active)

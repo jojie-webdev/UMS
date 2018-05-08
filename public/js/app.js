@@ -13923,7 +13923,10 @@ __WEBPACK_IMPORTED_MODULE_0_jquery___default()('table[data-form="deleteForm"]').
 
 //Forms submit button is disabled if no action happen.
 __WEBPACK_IMPORTED_MODULE_0_jquery___default()(".profile-form input[type=submit]").attr('disabled', 'disabled');
-__WEBPACK_IMPORTED_MODULE_0_jquery___default()("form").keyup(function () {
+// $("input[type=submit]").keyup(function(){
+// $("input[type=submit]").removeAttr('disabled');
+// });
+__WEBPACK_IMPORTED_MODULE_0_jquery___default()("input.form-control").click(function () {
   __WEBPACK_IMPORTED_MODULE_0_jquery___default()("input[type=submit]").removeAttr('disabled');
 });
 

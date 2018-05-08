@@ -18,9 +18,16 @@ class UserController extends Controller
     public function index()
     {
         //Display All User from database
-        $users = User::all();
+        // $users = DB::table('users')->get();
+        // return view('users.index', ['users' => $users]);
 
+        //Users Join table
+        $users= DB::table('users')
+            ->join('role_user', 'users.id', '=', 'role_user.user_id')
+            ->get();
+        // return $users;
         return view('users.index', ['users' => $users]);
+
     }
 
     /**
