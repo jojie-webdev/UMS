@@ -50,7 +50,6 @@ $("input.form-control").click(function(){
 $("input[type=submit]").removeAttr('disabled');
 });
 
-
 // Flassmessage Edit Profile
 setTimeout(function() {
 	$('#successMessage').fadeOut('fast');

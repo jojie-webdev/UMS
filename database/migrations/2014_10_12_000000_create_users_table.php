@@ -16,8 +16,8 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('company')->default('Facebook Company');
-            $table->string('address')->default('California');
+            $table->string('company');
+            $table->string('address');
             $table->integer('age')->default(18);
             $table->string('gender')->default('Male');
             $table->string('about_me')->default('I am handsome!');

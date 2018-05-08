@@ -9068,6 +9068,11 @@ body.skin-blue.sidebar-mini {
   color: #848586;
 }
 
+.container {
+  background: #fff;
+  padding: 25px !important;
+}
+
 nav.navbar.navbar-static-top {
   height: 50px !important;
 }
@@ -9139,12 +9144,45 @@ div#users-table_paginate {
   color: white;
 }
 
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1040;
+  background: transparent !important;
+}
+
 .form-control {
   color: #a48d86 !important;
 }
 
 textarea.form-control {
   height: 100px;
+}
+
+.treeview-menu {
+  display: none;
+}
+
+.container.profile {
+  background: #0e0e0e !important;
+}
+
+.show-user {
+  padding: 20px 0px;
+  color: green;
+  font-weight: bold;
+}
+
+div.row.thumb-profile {
+  text-align: center;
+  color: #fff;
+}
+
+.caption h3 {
+  font-style: italic;
 }
 
 /*!

@@ -13,6 +13,11 @@ section.content.container-fluid {
 body.skin-blue.sidebar-mini {
     color: #848586;
 }
+.container{
+    background: #fff;
+    padding: 25px!important;
+}
+
 
 // Typography
 $font-family-sans-serif: "Raleway", sans-serif;
@@ -86,11 +91,40 @@ div#users-table_paginate {
     background: #2ea94a;
     color: white;
 }
-
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1040;
+    background: transparent!important;
+}
 //form 
 .form-control {
     color: #a48d86!important;
 }
 textarea.form-control {
     height: 100px;
+}
+
+.treeview-menu {
+    display: none;
+}
+
+//ALL USERS 
+.container.profile {
+    background: #0e0e0e!important;
+}
+.show-user {
+    padding: 20px 0px;
+    color: green;
+    font-weight: bold;
+}
+div.row.thumb-profile {
+    text-align: center; 
+    color: #fff;
+}
+.caption h3 {
+    font-style: italic;
 }

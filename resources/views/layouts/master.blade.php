@@ -29,7 +29,8 @@
   <header class="main-header">
 
     <!-- Logo -->
-    <a href="{{ URL::to('users') }}" class="logo">
+    <!-- <a href="{{ URL::to('admin') }}" class="logo"> -->
+    <a href="#" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>D</b>SH</span>
       <!-- logo for regular state and mobile devices -->
@@ -81,8 +82,20 @@
         <li class="active">
           <a href="{{ url('users') }}">&nbsp;<i class="fa fa-user"></i><span>Users</span></a>
         </li>
-        <li class="active"><a href="{{ url('users/{user}/edit') }}"><i class="fa fa-cog fa-fw" aria-hidden="true"></i>&nbsp;<span>Settings</span></a></li>
-
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-cog fa-fw" aria-hidden="true"></i>&nbsp;<span>Settings</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{ url('users/{user}/edit') }}"><i class="fa fa-circle-o"></i>My Profile</a></li>
+            @if (Auth::user()->isAdmin())
+              <li><a href="{{ URL::to('admin') }}"><i class="fa fa-circle-o"></i>User Database</a></li>
+            @endif
+          </ul>
+        </li>
         <li class="">
            <a href="{{ route('logout') }}"
                 onclick="event.preventDefault();
@@ -102,15 +115,10 @@
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-   
-
-    <!-- Main content -->
-    <section class="content container-fluid">
-        @include('layouts.errors')
-        @yield('style')
-        @yield('content')
-        @section('script')
-    </section>
+    @include('layouts.errors')
+    @yield('style')
+    @yield('content')
+    @section('script')
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
