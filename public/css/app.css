@@ -9154,6 +9154,26 @@ div#users-table_paginate {
   background: transparent !important;
 }
 
+.modal-content {
+  width: 120% !important;
+}
+
+.col-md-6.modal-prof div {
+  font-weight: bold;
+}
+
+.col-md-6.modal-prof > div span {
+  font-style: italic;
+  margin-left: 5px;
+  font-weight: lighter !important;
+}
+
+@media only screen and (max-width: 767px) {
+  .modal-content {
+    width: 100% !important;
+  }
+}
+
 .form-control {
   color: #a48d86 !important;
 }
@@ -9183,6 +9203,12 @@ div.row.thumb-profile {
 
 .caption h3 {
   font-style: italic;
+}
+
+@media only screen and (max-width: 991px) {
+  .container.profile {
+    max-width: 100% !important;
+  }
 }
 
 /*!

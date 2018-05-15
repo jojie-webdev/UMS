@@ -55,3 +55,24 @@ setTimeout(function() {
 	$('#successMessage').fadeOut('fast');
 }, 2000); // <-- time in milliseconds
 	
+
+$(".thumbnail").click(function() {
+	// alert($(this).text());
+	//Get data from profile index
+	var name = $(this).find(".p-name").html();
+	var company = $(this).find(".p-company").html();
+	var address = $(this).find(".p-address").html();
+	var age = $(this).find(".p-age").html();
+	var gender = $(this).find(".p-gender").html();
+	var about_me = $(this).find(".p-about-me").html();
+	var email = $(this).find(".p-email").html();
+
+	//Set data to modal
+	$('.name span').html(name);
+	$('.company span').html(company);
+	$('.address span').html(address);
+	$('.age span').html(age);
+	$('.gender span').html(gender);
+	$('.about-me span').html(about_me);
+	$('.email span').html(email);
+});

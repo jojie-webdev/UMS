@@ -13902,23 +13902,23 @@ window.Vue = __webpack_require__(37);
 Vue.component('example-component', __webpack_require__(41));
 
 var app = new Vue({
-  el: '#app'
+	el: '#app'
 });
 
 //Datatables 
 __WEBPACK_IMPORTED_MODULE_0_jquery___default()(function () {
-  __WEBPACK_IMPORTED_MODULE_0_jquery___default()('#users-table').DataTable({
-    "pagingType": "simple"
-  });
+	__WEBPACK_IMPORTED_MODULE_0_jquery___default()('#users-table').DataTable({
+		"pagingType": "simple"
+	});
 });
 
 //Confirmation action button
 __WEBPACK_IMPORTED_MODULE_0_jquery___default()('table[data-form="deleteForm"]').on('click', '.form-delete', function (e) {
-  e.preventDefault();
-  var $form = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(this);
-  __WEBPACK_IMPORTED_MODULE_0_jquery___default()('#confirm').modal({ backdrop: 'static', keyboard: false }).on('click', '#delete-btn', function () {
-    $form.submit();
-  });
+	e.preventDefault();
+	var $form = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(this);
+	__WEBPACK_IMPORTED_MODULE_0_jquery___default()('#confirm').modal({ backdrop: 'static', keyboard: false }).on('click', '#delete-btn', function () {
+		$form.submit();
+	});
 });
 
 //Forms submit button is disabled if no action happen.
@@ -13927,13 +13927,35 @@ __WEBPACK_IMPORTED_MODULE_0_jquery___default()(".profile-form input[type=submit]
 // $("input[type=submit]").removeAttr('disabled');
 // });
 __WEBPACK_IMPORTED_MODULE_0_jquery___default()("input.form-control").click(function () {
-  __WEBPACK_IMPORTED_MODULE_0_jquery___default()("input[type=submit]").removeAttr('disabled');
+	__WEBPACK_IMPORTED_MODULE_0_jquery___default()("input[type=submit]").removeAttr('disabled');
 });
 
 // Flassmessage Edit Profile
 setTimeout(function () {
-  __WEBPACK_IMPORTED_MODULE_0_jquery___default()('#successMessage').fadeOut('fast');
+	__WEBPACK_IMPORTED_MODULE_0_jquery___default()('#successMessage').fadeOut('fast');
 }, 2000); // <-- time in milliseconds
+
+
+__WEBPACK_IMPORTED_MODULE_0_jquery___default()(".thumbnail").click(function () {
+	// alert($(this).text());
+	//Get data from profile index
+	var name = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).find(".p-name").html();
+	var company = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).find(".p-company").html();
+	var address = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).find(".p-address").html();
+	var age = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).find(".p-age").html();
+	var gender = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).find(".p-gender").html();
+	var about_me = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).find(".p-about-me").html();
+	var email = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).find(".p-email").html();
+
+	//Set data to modal
+	__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.name span').html(name);
+	__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.company span').html(company);
+	__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.address span').html(address);
+	__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.age span').html(age);
+	__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.gender span').html(gender);
+	__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.about-me span').html(about_me);
+	__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.email span').html(email);
+});
 
 /***/ }),
 /* 13 */

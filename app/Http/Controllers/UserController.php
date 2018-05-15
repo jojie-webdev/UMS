@@ -19,7 +19,7 @@ class UserController extends Controller
     {
         //Display All User from database
         $users = DB::table('users')->get();
-        return view('users.index', ['users' => $users]);
+        return view('users.index', ['users' => $users])->render();
 
         // //Users Join table
         // $users= DB::table('users')
