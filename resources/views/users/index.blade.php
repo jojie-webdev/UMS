@@ -27,6 +27,12 @@
                         <div class="p-gender" hidden>{{ $user->gender }}</div>
                         <div class="p-about-me" hidden>{{ $user->about_me }}</div>
                         <div class="p-email" hidden>{{ $user->email }}</div>
+                        <!-- If user is active or not -->
+                        @if ($user->is_active)
+                            <div class="user-status-active">ACTIVE</div>
+                        @else
+                            <div class="user-status-inactive">INACTIVE</div>
+                        @endif
 					</div>
 				</div>
 			</div>

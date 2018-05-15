@@ -9205,6 +9205,16 @@ div.row.thumb-profile {
   font-style: italic;
 }
 
+.user-status-active {
+  color: green !important;
+  font-weight: bold;
+}
+
+.user-status-inactive {
+  color: red;
+  font-weight: bold;
+}
+
 @media only screen and (max-width: 991px) {
   .container.profile {
     max-width: 100% !important;
