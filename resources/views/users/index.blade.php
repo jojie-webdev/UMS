@@ -16,11 +16,15 @@
 		@foreach($users as $user)
 			<div class="col-sm-6 col-md-4" style="margin-bottom: 15px;">
 				<div class="thumbnail">
-				<a href="" data-toggle="modal" data-target="#profile-info" class="show-user-profile">
-					<img src="/uploads/{{ $user->filename }}" class="img-circle" alt="User Image" width="220" height="200">
-				</a>
+                    <div class="thumbnail-hover">
+    				<a href="" class="show-user-profile">
+    					<img src="/uploads/{{ $user->filename }}" class="image img-circle" alt="User Image" width="220" height="200">
+    				</a>
+                    <div class="middle">
+                        <h3 class="p-name text">{{ $user->name }}</h3>
+                    </div>
+                </div>
 					<div id="prof" class="caption">
-						<h3 class="p-name">{{ $user->name }}</h3>
                         <div class="p-company" hidden>{{ $user->company }}</div>
                         <div class="p-address" hidden>{{ $user->address }}</div>
                         <div class="p-age" hidden>{{ $user->age }}</div>
@@ -30,8 +34,10 @@
                         <!-- If user is active or not -->
                         @if ($user->is_active)
                             <div class="user-status-active">ACTIVE</div>
+                            <button style="margin-top: 15px;" class="btn btn-success" data-toggle="modal" data-target="#profile-info" >More Info</button>
                         @else
                             <div class="user-status-inactive">INACTIVE</div>
+                            <button style="margin-top: 15px;" class="btn btn-success" data-toggle="modal" data-target="#profile-info" >More Info</button>
                         @endif
 					</div>
 				</div>
