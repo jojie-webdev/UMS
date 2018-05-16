@@ -13936,6 +13936,7 @@ setTimeout(function () {
 }, 2000); // <-- time in milliseconds
 
 
+//User More Info Event
 __WEBPACK_IMPORTED_MODULE_0_jquery___default()(".thumbnail").click(function () {
 	// alert($(this).text());
 	//Get data from profile index

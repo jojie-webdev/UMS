@@ -82,6 +82,9 @@
         <li class="active">
           <a href="{{ url('users') }}">&nbsp;<i class="fa fa-user"></i><span>Users</span></a>
         </li>
+        <li>
+          <a href="{{ url('#') }}">&nbsp;<i class="fa fa-sticky-note"></i><span>Add Notes</span></a>
+        </li>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-cog fa-fw" aria-hidden="true"></i>&nbsp;<span>Settings</span>

@@ -9208,7 +9208,6 @@ div.row.thumb-profile {
 .user-status-active {
   color: green !important;
   font-weight: bold !important;
-  background: #636060;
   width: 80%;
   margin: auto;
 }
@@ -9216,7 +9215,6 @@ div.row.thumb-profile {
 .user-status-inactive {
   color: red;
   font-weight: bold !important;
-  background: #636060;
   width: 80%;
   margin: auto;
 }

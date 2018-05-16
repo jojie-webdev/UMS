@@ -56,6 +56,7 @@ setTimeout(function() {
 }, 2000); // <-- time in milliseconds
 	
 
+//User More Info Event
 $(".thumbnail").click(function() {
 	// alert($(this).text());
 	//Get data from profile index
