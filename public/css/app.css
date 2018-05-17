@@ -9264,6 +9264,27 @@ div.row.thumb-profile {
   padding: 16px 32px;
 }
 
+ul.pagination {
+  background: #000;
+  text-align: right !important;
+  margin: auto;
+  padding: 16px 25px;
+}
+
+.pagination li {
+  background: #28a745;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  margin-right: 6px;
+}
+
+.pagination li a {
+  background: none;
+  color: #fff;
+  padding: 19px;
+}
+
 @media only screen and (max-width: 1990px) {
   .container.profile {
     max-width: 100% !important;

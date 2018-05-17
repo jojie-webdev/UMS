@@ -18,7 +18,7 @@ class UserController extends Controller
     public function index()
     {
         //Display All User from database
-        $users = DB::table('users')->get();
+        $users = DB::table('users')->simplePaginate(6);
         return view('users.index', ['users' => $users]);
 
         // //Users Join table
