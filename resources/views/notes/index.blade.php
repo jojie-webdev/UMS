@@ -13,7 +13,15 @@
 <div class="container notes">
     <div><h3>Notes</h3></div>
     @foreach($notes as $note)
-		 <h3 class="p-name text">{{ $note->title }} &nbsp; - &nbsp;<small style="font-style: italic;">{{$note->getNoteUsername()}}</small></h3>
+		 <h3 class="p-name text">{{ $note->title }} &nbsp; - &nbsp;
+            <small style="font-style: italic;">
+                @if ($note->getNoteUsername() === Auth::user()->name)
+                    me
+                @else
+                    {{$note->getNoteUsername()}}
+                @endif
+            </small>
+        </h3>
 	@endforeach
 </div>
 @endsection
