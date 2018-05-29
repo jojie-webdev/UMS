@@ -83,7 +83,7 @@
           <a href="{{ url('users') }}">&nbsp;<i class="fa fa-user"></i><span>Users</span></a>
         </li>
         <li>
-          <a href="{{ url('#') }}">&nbsp;<i class="fa fa-sticky-note"></i><span>Add Notes</span></a>
+          <a href="{{ url('mynote') }}">&nbsp;<i class="fa fa-sticky-note"></i><span>My Notes</span></a>
         </li>
         <li class="treeview">
           <a href="#">
@@ -96,6 +96,7 @@
             <li><a href="{{ url('users/{user}/edit') }}"><i class="fa fa-circle-o"></i>My Profile</a></li>
             @if (Auth::user()->isAdmin())
               <li><a href="{{ URL::to('admin') }}"><i class="fa fa-circle-o"></i>User Database</a></li>
+              <li><a href="{{ URL::to('note') }}"><i class="fa fa-circle-o"></i>User Notes</a></li>
             @endif
           </ul>
         </li>

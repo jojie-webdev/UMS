@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use \App\User;
 
 class Note extends Model
 {
@@ -10,8 +11,15 @@ class Note extends Model
         'title', 'body',
     ];
 
-    public function users()
+    public function user()
     {
-        $this->belongsTo('App\User');
+        $this->belongsTo('App\User', 'id');
+    }
+
+    public function getNoteUsername()
+    {
+        return User::where('id', $this->user_id)->first()->name;
+        // $notes = DB::table('notes')->where("user_id", "=", $user->id)->get();
+        // return view('notes.add_note', ['notes' => $notes]);
     }
 }

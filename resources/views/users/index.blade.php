@@ -44,8 +44,8 @@
 			</div>
 		@endforeach
 	</div>
+    <?php echo $users->render(); ?>
 </div>
-<?php echo $users->render(); ?>
 
 <!-- Show Info -->
 <div class="modal" id="profile-info">

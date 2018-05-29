@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use \App\User;
 use DB;
 
-class NoteController extends Controller
+class UserNoteController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,9 +18,8 @@ class NoteController extends Controller
     public function index()
     {
         $user = Auth::user()->id;
-        // $notes = DB::table('notes')->where("user_id", "=", $user)->get();
-        $notes = Note::all();
-        return view('notes.index', ['notes' => $notes]);
+        $notes = DB::table('notes')->where("user_id", "=", $user)->get();
+        return view('usernote.index', ['notes' => $notes]);
     }
 
     /**
@@ -30,7 +29,7 @@ class NoteController extends Controller
      */
     public function create()
     {
-        return view('notes.add_note');
+        //
     }
 
     /**
@@ -41,29 +40,16 @@ class NoteController extends Controller
      */
     public function store(Request $request)
     {
-        // Validate the request...
-
-        $user = Auth::user()->id;
-        $note = new Note($request->all());
-
-        $note->user_id = $user;
-        $note->save();
-        return back()->with('message', 'Note Added Successfully!!');
+        //
     }
-
-    // public function AllPosts(){
-
-    //     $posts = DB::table('notes')->where("user_id", "=", $user->id)->get();
-    //     return view('notes.add_note', ['posts' => $posts]);
-    // }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Note  $note
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Note $note)
+    public function show($id)
     {
         //
     }
@@ -71,10 +57,10 @@ class NoteController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Note  $note
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Note $note)
+    public function edit($id)
     {
         //
     }
@@ -83,10 +69,10 @@ class NoteController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Note  $note
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Note $note)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -94,10 +80,10 @@ class NoteController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Note  $note
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Note $note)
+    public function destroy($id)
     {
         //
     }

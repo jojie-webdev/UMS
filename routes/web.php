@@ -23,6 +23,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['middleware' => ['auth']], function() {
     Route::resource('users', 'UserController');
 	Route::resource('admin', 'AdminController');
+	Route::resource('note', 'NoteController');
+	Route::resource('mynote', 'UserNoteController');
 });
 
 
