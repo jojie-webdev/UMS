@@ -85,6 +85,11 @@ class UserNoteController extends Controller
      */
     public function destroy($id)
     {
-        //
+         // delete
+        $note = Note::find($id);
+        $note->delete();
+
+        // redirect
+        return back()->with('message', 'Note Deleted Successfully!!');
     }
 }

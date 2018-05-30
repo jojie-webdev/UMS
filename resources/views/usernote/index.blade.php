@@ -10,6 +10,11 @@
         </ul>
     </div>
 @endif
+<style type="text/css">
+	input.btn.btn-danger.mynote {
+	    margin-top: -9px!important;
+	}
+</style>
 <div class="container notes">
     <div><h3>Notes</h3></div>
 
@@ -36,8 +41,25 @@
 			</div>
 	</form><!-- Form END -->
 	@foreach($notes as $note)
-		 <h3 class="p-name text">{{ $note->title }}</h3>
+		
+			<h3 class="p-name text">{{ $note->title }}
+				<div class="mynote-body"><small>{{ $note->body }}</small></div>
+				 {{ Form::open(array('url' => 'mynote/' . $note->id,  'onsubmit' => 'return ConfirmDelete()', 'class' => 'pull-right form-delete')) }}
+                    {{ Form::hidden('_method', 'DELETE') }}
+                    {{ Form::submit('x', array('class' => 'btn btn-danger mynote')) }}
+                {{ Form::close() }}
+			</h3>
+		
 	@endforeach
+	<script>
+		function ConfirmDelete()
+		{
+			var x = confirm("Are you sure you want to delete?");
+			if (x)
+				return true;
+			else
+				return false;
+		}
+	</script>
 </div>
 @endsection
- 
