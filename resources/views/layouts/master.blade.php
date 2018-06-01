@@ -30,7 +30,7 @@
 
     <!-- Logo -->
     <!-- <a href="{{ URL::to('admin') }}" class="logo"> -->
-    <a href="#" class="logo">
+    <a href="{{ url('users') }}" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>D</b>SH</span>
       <!-- logo for regular state and mobile devices -->

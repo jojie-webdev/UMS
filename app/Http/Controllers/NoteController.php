@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Note;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use \App\User;
 use DB;
@@ -41,21 +42,16 @@ class NoteController extends Controller
      */
     public function store(Request $request)
     {
-        // Validate the request...
-
+        //Add new note
         $user = Auth::user()->id;
         $note = new Note($request->all());
 
         $note->user_id = $user;
         $note->save();
         return back()->with('message', 'Note Added Successfully!!');
+
+        
     }
-
-    // public function AllPosts(){
-
-    //     $posts = DB::table('notes')->where("user_id", "=", $user->id)->get();
-    //     return view('notes.add_note', ['posts' => $posts]);
-    // }
 
     /**
      * Display the specified resource.

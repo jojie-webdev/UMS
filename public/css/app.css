@@ -9287,6 +9287,7 @@ ul.pagination {
 
 input.btn.btn-danger.mynote {
   margin-top: -78px !important;
+  margin-right: 5px;
 }
 
 .mynote-body {

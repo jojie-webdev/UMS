@@ -18,7 +18,7 @@ class UserNoteController extends Controller
     public function index()
     {
         $user = Auth::user()->id;
-        $notes = DB::table('notes')->where("user_id", "=", $user)->get();
+        $notes = DB::table('notes')->where("user_id", "=", $user)->latest()->get();
         return view('usernote.index', ['notes' => $notes]);
     }
 
@@ -90,6 +90,6 @@ class UserNoteController extends Controller
         $note->delete();
 
         // redirect
-        return back()->with('message', 'Note Deleted Successfully!!');
+        return back()->with('message-error', 'Note Deleted Successfully!!');
     }
 }

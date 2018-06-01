@@ -24,13 +24,13 @@
 			<div class="form-group">
 				<label class="col-lg-12 control-label">Title:</label>
 				<div class="col-lg-12">
-					<input class="form-control file" name="title" type="text">
+					<input class="form-control file" name="title" type="text" required>
 				</div>
 			</div>
 			<div class="form-group">
 				<label class="col-lg-12 control-label">Body:</label>
 				<div class="col-lg-12">
-					<textarea class="form-control" name="body" type="text" >
+					<textarea class="form-control" name="body" type="text" required>
 					</textarea>
 				</div>
 			</div>

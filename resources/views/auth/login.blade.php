@@ -148,10 +148,12 @@
                                     @endif
                                 </div>
                             </div><!-- Age -->
-
                             <div class="form-group row">
                                 <div class="col-md-12">
-                                    <input id="gender" type="text" class="form-control{{ $errors->has('gender') ? ' is-invalid' : '' }}" name="gender"required autofocus placeholder="Gender">
+                                    <select class="form-control" id="sel1" type="text" class="form-control{{ $errors->has('gender') ? ' is-invalid' : '' }}" name="gender"required autofocus placeholder="Gender">
+                                        <option>Male</option>
+                                        <option>Female</option>
+                                    </select>
                                     <i class="fa fa-intersex custom form-control-feedback"></i>
 
                                     @if ($errors->has('gender'))
@@ -249,6 +251,10 @@
         }
         form input {
             font-size: 14px!important;
+        }
+        select#sel1 {
+            height: 36px;
+            font-size: 14px;
         }
         span.glyphicon{
             font-size: 20px;

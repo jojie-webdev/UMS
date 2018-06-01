@@ -53,7 +53,11 @@
 									<div class="form-group">
 										<label class="col-lg-3 control-label">Gender:</label>
 										<div class="col-lg-12">
-											<input class="form-control" name="gender" type="text" value="{{$user->gender}}">
+											<select class="form-control" id="sel1" type="text" name="gender" value="{{$user->gender}}" class="option-gender">
+												<option value="{{$user->gender}}"></option>
+		                                        <option>Male</option>
+		                                        <option>Female</option>
+		                                    </select>
 										</div>
 									</div>
 									<div class="form-group">

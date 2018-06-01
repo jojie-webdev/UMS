@@ -21,8 +21,6 @@
                     {{$note->getNoteUsername()}}
                 @endif
             </small>
-        
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
         </h3>
 	@endforeach
 </div>
