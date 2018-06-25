@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use \App\User;
+use \App\Repositories\Users;
 use DB;
 
 class AdminController extends Controller
@@ -15,9 +16,15 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+
+    //Automatic resolution /Automatic depency injection
+    public function index(Users $users)
     {
-        $users = DB::table('users')->get();
+        $users = $users->all();
+        // $users = (new \App\Repositories\Users)->all();
+
+
+        // $users = DB::table('users')->get();
         return view('admin.index', ['users' => $users]);
     }
 
